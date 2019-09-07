@@ -12,9 +12,13 @@ namespace Checkers
 {
     public partial class Form1 : Form
     {
+        Board board;
         public Form1()
         {
             InitializeComponent();
+            board = new Board();
+            BoardUI boardUI = new BoardUI(600);
+            this.Controls.Add(boardUI);
         }
     }
 }

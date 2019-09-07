@@ -8,11 +8,13 @@ namespace Checkers
 {
     public class Board
     {
-        public int[,] squares;
+        // TODO: Move constants into separate file
+        // TODO: Implement a way to change the board size
+        public int[,] Squares;
 
         public Board()
         {
-            squares = new int[10, 10];
+            Squares = new int[10, 10];
         }
 
         public void Initialize()
@@ -26,7 +28,7 @@ namespace Checkers
             for (int i = 0; i < 4; i++)
                 for (int j = 0; j < 10; j++)
                 {
-                    squares[i, j] = -(i + j) % 2;
+                    Squares[i, j] = -(i + j) % 2;
                 }
         }
         private void SetWhitePieces()
@@ -34,7 +36,7 @@ namespace Checkers
             for (int i = 0; i < 4; i++)
                 for (int j = 0; j < 10; j++)
                 {
-                    squares[i+6, j] = (i + j) % 2;
+                    Squares[i+6, j] = (i + j) % 2;
                 }
         }
     }

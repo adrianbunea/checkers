@@ -9,8 +9,10 @@ namespace Checkers.Tests
         public void Board_NoParameters_StartsAsEmpty()
         {
             Board board = new Board();
+
             int[,] expectedSquares = new int[10, 10];
-            int[,] actualSquares = board.squares;
+            int[,] actualSquares = board.Squares;
+
             CollectionAssert.AreEqual(expectedSquares, actualSquares);
         }
 
@@ -33,7 +35,8 @@ namespace Checkers.Tests
             };
 
             board.Initialize();
-            int[,] actualSquares = board.squares;
+            int[,] actualSquares = board.Squares;
+
             CollectionAssert.AreEqual(expectedSquares, actualSquares);
         }
     }

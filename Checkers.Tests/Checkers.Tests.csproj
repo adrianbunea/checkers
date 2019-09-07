@@ -47,10 +47,14 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BoardTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BoardUITests.cs" />
+    <Compile Include="SquareUITests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
