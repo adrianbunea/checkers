@@ -15,7 +15,7 @@ namespace Checkers.Tests
         [DataRow(  0,   0,   0)]
         public void BoardUI_WithPositiveSizeParameter_HasCorrectSizes(int size, int expectedWidth, int expectedHeight)
         {
-            BoardUI boardUI = new BoardUI(size);
+            BoardUI boardUI = new BoardUI(size, new Board());
 
             Size expectedSize = new Size(expectedWidth, expectedHeight);
             Size actualSize = boardUI.Size;
@@ -27,13 +27,13 @@ namespace Checkers.Tests
         [ExpectedException(typeof(ArgumentException))]
         public void BoardUI_WithNegativeSizeParameter_ThrowsArgumentException()
         {
-            new BoardUI(-100);
+            new BoardUI(-100, new Board());
         }
 
         [TestMethod]
         public void BoardUI_WithSizeParameter_CreatesColumnsWithAlternatingColors()
         {
-            BoardUI boardUI = new BoardUI(200);
+            BoardUI boardUI = new BoardUI(0, new Board());
 
             for (int row = 0; row < 10; row++)
                 for (int column = 0; column < 9; column++)
@@ -51,7 +51,7 @@ namespace Checkers.Tests
         [TestMethod]
         public void BoardUI_WithSizeParameter_CreatesRowsWithAlternatingColors()
         {
-            BoardUI boardUI = new BoardUI(200);
+            BoardUI boardUI = new BoardUI(0, new Board());
 
             for (int column = 0; column < 10; column++)
                 for (int row = 0; row < 9; row++)
@@ -72,7 +72,7 @@ namespace Checkers.Tests
             // It might seem like a useless test, but with the alternating color tests
             // this ensures the board actually has the black/white checkered pattern of a proper board
 
-            BoardUI boardUI = new BoardUI(200);
+            BoardUI boardUI = new BoardUI(0, new Board());
             Color[] squareColors = new Color[]
             {
                 Color.White,

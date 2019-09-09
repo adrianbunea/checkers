@@ -17,7 +17,7 @@ namespace Checkers
         {
             InitializeComponent();
             board = new Board();
-            BoardUI boardUI = new BoardUI(600);
+            BoardUI boardUI = new BoardUI(600, board);
             this.Controls.Add(boardUI);
         }
     }

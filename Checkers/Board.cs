@@ -15,9 +15,10 @@ namespace Checkers
         public Board()
         {
             Squares = new int[10, 10];
+            SetPieces();
         }
 
-        public void Initialize()
+        public void SetPieces()
         {
             SetBlackPieces();
             SetWhitePieces();
