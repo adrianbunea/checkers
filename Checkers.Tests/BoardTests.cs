@@ -17,7 +17,7 @@ namespace Checkers.Tests
         }
 
         [TestMethod]
-        public void Initialize_NoParameters_SetsPiecesCorrectly()
+        public void SetPieces_NoParameters_SetsPiecesCorrectly()
         {
             Board board = new Board();
             int[,] expectedSquares = new int[10, 10] 
@@ -34,7 +34,7 @@ namespace Checkers.Tests
                 { 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 }
             };
 
-            board.Initialize();
+            board.SetPieces();
             int[,] actualSquares = board.Squares;
 
             CollectionAssert.AreEqual(expectedSquares, actualSquares);

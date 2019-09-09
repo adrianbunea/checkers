@@ -49,7 +49,7 @@ namespace Checkers.Tests
                 Color.White,
                 Color.DimGray
             };
-            SquareUI squareUI = new SquareUI(row, column, 1000);
+            SquareUI squareUI = new SquareUI(row, column, 0);
 
             Color expectedColor = squareColors[colorIndex];
             Color actualColor = squareUI.BackColor;
@@ -64,7 +64,7 @@ namespace Checkers.Tests
         [ExpectedException(typeof(IndexOutOfRangeException))]
         public void SquareUI_WithNegativeIndexes_ThrowsIndexOutOfRangeException(int row, int column)
         {
-            SquareUI squareUI = new SquareUI(row, column, 1000);
+            SquareUI squareUI = new SquareUI(row, column, 0);
         }
 
         [TestMethod]
@@ -74,7 +74,7 @@ namespace Checkers.Tests
         [ExpectedException(typeof(IndexOutOfRangeException))]
         public void SquareUI_WithIndexesLargerThanMaximumLimit_ThrowsIndexOutOfRangeException(int row, int column)
         {
-            SquareUI squareUI = new SquareUI(row, column, 1000);
+            SquareUI squareUI = new SquareUI(row, column, 0);
         }
     }
 }
